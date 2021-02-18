@@ -205,7 +205,6 @@ body {
     position: relative;
 }
 
-.heading--beauty::before,
 .heading--beauty::after {
     content: "";
     display: block;
@@ -217,13 +216,9 @@ body {
 }
 
 .heading--beauty::after {
-    top: 140px;
+    bottom: 60px;
     transform: translateX(-50%);
-}
-
-.heading--beauty::before {
-    top: 145px;
-    transform: translateX(-25%);
+    box-shadow: 12px 6px 0 #18CFAB;
 }
 
 .text--white {
@@ -253,7 +248,9 @@ body {
 }
 
 .option__item {
+    box-sizing: border-box;
     flex: 1;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -725,4 +722,87 @@ body {
 .copy--link {
     color: #18CFAB;
     text-decoration: none;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    width: 25px;
+    margin-right: 25px;
+}
+
+.line {
+    height: 3px;
+    width: 100%;
+    background-color: #999;
+}
+
+.line:not(:first-child) {
+    margin-top: 5px;
+}
+
+@media (max-width: 1200px) {
+    .nav-wrapper {
+        padding: 15px 0;
+    }
+    .burger {
+        display: block;
+    }
+    .nav__list {
+        display: none;
+    }
+    .options__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .option__item {
+        background-color: #333;
+    }
+    .option__item:nth-child(even) {
+        background-color: #18CFAB;
+    }
+    .new__list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width:850px) {
+    .tabs {
+        flex-direction: column;
+    }
+    .new__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-imgs {
+        column-count: 2;
+    }
+    .work-imgs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:550px) {
+    .content__btn {
+        flex-direction: column;
+    }
+    .content__btn .btn {
+        width: 100%;
+        margin: 45px 0;
+    }
+    .heading--big {
+        font-size: 45px;
+    }
+    .options__list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .tabs {
+        flex-direction: column;
+    }
+    .new__list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .gallery-imgs {
+        column-count: 1;
+    }
 }
