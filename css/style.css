@@ -780,6 +780,9 @@ body {
     .work-imgs {
         grid-template-columns: repeat(2, 1fr);
     }
+    .slider-content {
+        min-height: 600px;
+    }
 }
 
 @media(max-width:550px) {
